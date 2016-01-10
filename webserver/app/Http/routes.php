@@ -11,6 +11,8 @@
 |
 */
 
+Route::post('products/create', 'ProductsController@create');
+
 Route::get('/', function () {
     return view('welcome');
 });

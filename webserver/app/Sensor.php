@@ -15,5 +15,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Sensor extends Model
 {
-    //
+    protected $fillable = ['generic_sensor_id'];
 }
