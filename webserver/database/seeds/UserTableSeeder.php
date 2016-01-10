@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {        
 	//Creates a dummy user for testing
         DB::table('users')->insert([
-        	'first_name' => Elvis,
+        	'first_name' => Elvist,
 		'last_name' => Presly,
         	'email' => 'theking.@gmail.com',
         	'password' => bcrypt('secret'),			
