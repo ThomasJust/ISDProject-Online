@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -10,14 +10,14 @@ class UsersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        
-	//Creates a dummy user for testing
+    {
+        //Creates a dummy user for testing
         DB::table('users')->insert([
-        	'first_name' => Elvis,
-		'last_name' => Presly,
-        	'email' => 'theking.@gmail.com',
-        	'password' => bcrypt('secret'),			
-		'remember_token' => str_random(10),
-			 ]);
+            'first_name' => "Elvis",
+            'last_name' => "Presly",
+            'email' => 'theking.@gmail.com',
+            'password' => bcrypt('secret'),
+            'remember_token' => str_random(10),
+        ]);
     }
 }
