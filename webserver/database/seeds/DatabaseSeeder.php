@@ -21,9 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GenericSensorTableSeeder::class);
 
         //Create 50 entries for testing with help function and ModelFactory
-        factory(App\User::class, 50)->create()->each(function($u) {
-            $u->posts()->save(factory(App\Post::class)->make());
-        });
+        factory(App\User::class, 50)->create();
     
         Model::reguard();
     }
