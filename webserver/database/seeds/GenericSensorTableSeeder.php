@@ -15,28 +15,94 @@ class GenericSensorTableSeeder extends Seeder
         //For each measured value one entry
 
         DB::table('generic_sensors')->insert([
-            'name' => 'ADXL330 Analog Devices Accelerometer',
-            'alias' => 'Accelerometer',
-            'unit' => 'G',
+			'alias' => 'Carbon-Dioxide',
+			'name' => 'MD62',
+			'symbol' => 'CO^2',
+			'unit' => 'ppm',
+			'range' => '300-2500',
+			'producer' => 'Hanwei Electronics',
         ]);
-
-        DB::table('generic_sensors')->insert([
-            'name' => 'BME280 Bosch combined humidity and pressure sensor',
-            'alias' => 'Humidity',
-            'unit' => '',
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Carbon-Monoxide',
+			'name' => 'MQ7',
+			'symbol' => 'CO',
+			'unit' => 'ppm',
+			'range' => '100-4000',
+			'producer' => 'Hanwei Electronics',
         ]);
-
-        DB::table('generic_sensors')->insert([
-            'name' => 'BME280 Bosch combined humidity and pressure sensor',
-            'alias' => 'Pressure',
-            'unit' => '',
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Volume',
+			'name' => 'MAX4465',
+			'symbol' => 'Vol',
+			'unit' => 'dB',
+			'range' => '0-100',
+			'producer' => 'Challenge Electronics',
         ]);
-
-        DB::table('generic_sensors')->insert([
-            'name' => 'BME280 Bosch combined humidity and pressure sensor',
-            'alias' => 'Temperature',
-            'unit' => '°C',
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Light intensity',
+			'name' => 'TSL2561',
+			'symbol' => 'Ev',
+			'unit' => 'Lux',
+			'range' => '50-500',
+			'producer' => 'TAOS',
         ]);
-
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Acceleration',
+			'name' => 'ADXL330',
+			'symbol' => 'a',
+			'unit' => 'g',
+			'range' => '0-5',
+			'producer' => 'Analog Devices',
+        ]);
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Temperature',
+			'name' => 'BME280',
+			'symbol' => 'T',
+			'unit' => '°C',
+			'range' => '0-40',
+			'producer' => 'Bosch',
+        ]);
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Humidity',
+			'name' => 'BME280',
+			'symbol' => 'Hr',
+			'unit' => '%',
+			'range' => '0-100',
+			'producer' => 'Bosch',
+        ]);
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Pressure',
+			'name' => 'BME280',
+			'symbol' => 'P',
+			'unit' => '3hPa',
+			'range' => '300-2200',
+			'producer' => 'Bosch',
+        ]);
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Smoke',
+			'name' => 'Optical',
+			'symbol' => 'S',
+			'unit' => '',
+			'range' => 'Binary',
+			'producer' => '-',
+        ]);
+		
+		DB::table('generic_sensors')->insert([
+			'alias' => 'Buzzer',
+			'name' => 'KEYES S',
+			'symbol' => 'B',
+			'unit' => '',
+			'range' => 'Binary',
+			'producer' => '-',
+        ]);
+		
     }
 }

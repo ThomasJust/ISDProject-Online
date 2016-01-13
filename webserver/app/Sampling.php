@@ -15,4 +15,5 @@ use Illuminate\Database\Eloquent\Model;
 class Sampling extends Model
 {
     //
+		public $timestamps = false; //no elo timestamps here (updated_at not needed)
 }
