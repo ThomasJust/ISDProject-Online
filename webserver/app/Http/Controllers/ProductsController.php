@@ -10,7 +10,7 @@ use App\Http\Requests\ProductCreationRequest;
 class ProductsController extends Controller
 {
 
-    public function create(ProductCreationRequest $request) {
+    public function store(ProductCreationRequest $request) {
         $newProduct = Product::create([
             'id' => $request->id,
             'version' => $request->version
