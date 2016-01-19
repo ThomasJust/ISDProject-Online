@@ -19,5 +19,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class GenericSensor extends Model
 {
-    //
+    protected $fillable = ['name', 'alias', 'unit'];
+
+    public function sensors()
+    {
+        return $this->hasMany("App\Sensor");
+    }
 }

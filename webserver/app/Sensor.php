@@ -16,4 +16,8 @@ use Illuminate\Database\Eloquent\Model;
 class Sensor extends Model
 {
     protected $fillable = ['generic_sensor_id'];
+
+    public function genericSensor(){
+        return $this->belongsTo("App\GenericSensor", "generic_sensor_id");
+    }
 }
