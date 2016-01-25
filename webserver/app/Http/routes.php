@@ -10,7 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
+});
+*/
+Route::get('/', ['middleware' => 'guest', 'uses' => 'UserController@index']);
+
+Route::get('foo', function () {
+    return 'Hello World';
 });
