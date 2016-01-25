@@ -13,6 +13,8 @@
 
 Route::post('/products/create', 'ProductsController@store');
 
+Route::get('/samplings/show/{productId}', 'SamplingsController@show');
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -20,4 +20,8 @@ class Sensor extends Model
     public function genericSensor(){
         return $this->belongsTo("App\GenericSensor", "generic_sensor_id");
     }
+
+    public function samplings() {
+        return $this->hasMany("App\Sampling");
+    }
 }
