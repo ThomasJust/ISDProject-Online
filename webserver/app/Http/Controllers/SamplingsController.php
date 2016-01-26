@@ -38,7 +38,7 @@ class SamplingsController extends Controller
         Product::findOrFail($productId); // Just to throw a failure if the product is not found
         $samplingsQueryBuilder = Sampling::query();
 
-        $samplingsQueryBuilder->join('sensors', 'sensor_id', '=', 'sensors.id');
+        $samplingsQueryBuilder->join('sensors', 'samplings.sensor_id', '=', 'sensors.id');
         $samplingsQueryBuilder->join('products', 'sensors.product_id', '=', 'products.id');
         $samplingsQueryBuilder->where('products.id', $productId);
 
