@@ -29,7 +29,7 @@ class GenericSensorTableSeeder extends Seeder
         App\GenericSensor::create([
             'name' => 'BME280 Bosch combined humidity and pressure sensor',
             'alias' => 'Pressure',
-            'unit' => '',
+            'unit' => 'kPa',
         ]);
 
         App\GenericSensor::create([
