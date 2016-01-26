@@ -15,4 +15,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     public $incrementing = false;
+
+    protected $fillable = ['id', 'version'];
+
+    public function sensors()
+    {
+        return $this->hasMany('App\Sensor');
+    }
 }

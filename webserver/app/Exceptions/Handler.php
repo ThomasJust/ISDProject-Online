@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Contracts\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -63,7 +64,13 @@ class Handler extends ExceptionHandler
     protected function renderExceptionWithWhoops(Exception $e)
     {
         $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+        $handler = new \Whoops\Handler\PrettyPageHandler();
+
+        if ($e instanceof ValidationException) {
+            $handler->addDataTable('Validation Errors', $e->getMessageProvider()->getMessageBag()->all());
+        }
+
+        $whoops->pushHandler($handler);
 
         return new \Illuminate\Http\Response(
             $whoops->handleException($e),

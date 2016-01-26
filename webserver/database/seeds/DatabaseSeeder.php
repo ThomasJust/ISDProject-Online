@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
 
         //Create needed sensor types
         $this->call(GenericSensorTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+        $this->call(SamplingsTableSeeder::class);
 
         //Create 50 entries for testing with help function and ModelFactory
         factory(App\User::class, 50)->create();
