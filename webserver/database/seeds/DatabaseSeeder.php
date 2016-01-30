@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
 		//STATIC Create needed sensor types
         $this->call(GenericSensorTableSeeder::class); 
 
+<<<<<<< HEAD
         //Create 10 User entries for testing with help function and ModelFactory
 		factory(App\Sampling::class, 10)->create(); //Samplings->Sensor->products
 		
@@ -28,6 +29,19 @@ class DatabaseSeeder extends Seeder
 		
 		factory(App\Location::class, 10)->create(); //Location->User
 		
+=======
+        // Create Elivs entry
+        $this->call(UserTableSeeder::class);
+
+        //Create needed sensor types
+        $this->call(GenericSensorTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+        $this->call(SamplingsTableSeeder::class);
+
+        //Create 50 entries for testing with help function and ModelFactory
+        factory(App\User::class, 50)->create();
+    
+>>>>>>> b51a384a905271dbb232aef23e0745e8c7f7f16e
         Model::reguard();
     }
 }

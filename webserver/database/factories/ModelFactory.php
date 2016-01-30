@@ -34,6 +34,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+<<<<<<< HEAD
 
 
 //Samplings->Sensor->products
@@ -72,3 +73,11 @@ $factory->defineAS(App\Sampling::class, 'onlySamplings', function (Faker\Generat
 
 
 
+=======
+$factory->define(App\Product::class, function (Faker\Generator $faker) {
+    return [
+        "id" => str_replace(":", "", $faker->macAddress),
+        "version" => "0.1"
+    ];
+});
+>>>>>>> b51a384a905271dbb232aef23e0745e8c7f7f16e
