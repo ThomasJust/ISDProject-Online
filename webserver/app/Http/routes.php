@@ -12,10 +12,37 @@
 */
 
 Route::post('/products/create', 'ProductsController@store');
-
 Route::post('/samplings/create', 'SamplingsController@store');
 Route::get('/samplings/show/{productId}', 'SamplingsController@show');
 
+
+// Welcomepage before and for login /register
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.welcome');
 });
+// Page for registration
+Route::get('/register', function () {
+    return view('pages.register');
+});
+
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// All Routes with Auth Middleware
+Route::group(['middleware' => 'auth'], function () {
+    
+	// home startsite
+	Route::get('/home', function(){
+	return View::make('pages.home');
+	});
+
+        
+});
+
