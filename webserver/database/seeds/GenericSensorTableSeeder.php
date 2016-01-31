@@ -14,7 +14,6 @@ class GenericSensorTableSeeder extends Seeder
         //Creates types of used sensors
         //For each measured value one entry
 
-<<<<<<< HEAD
         DB::table('generic_sensors')->insert([
 			'alias' => 'Carbon-Dioxide',
 			'name' => 'MD62',
@@ -49,30 +48,6 @@ class GenericSensorTableSeeder extends Seeder
 			'unit' => 'Lux',
 			'range' => '50-500',
 			'producer' => 'TAOS',
-=======
-        App\GenericSensor::create([
-            'name' => 'ADXL330 Analog Devices Accelerometer',
-            'alias' => 'Accelerometer',
-            'unit' => 'G',
-        ]);
-
-        App\GenericSensor::create([
-            'name' => 'BME280 Bosch combined humidity and pressure sensor',
-            'alias' => 'Humidity',
-            'unit' => '',
-        ]);
-
-        App\GenericSensor::create([
-            'name' => 'BME280 Bosch combined humidity and pressure sensor',
-            'alias' => 'Pressure',
-            'unit' => 'kPa',
-        ]);
-
-        App\GenericSensor::create([
-            'name' => 'BME280 Bosch combined humidity and pressure sensor',
-            'alias' => 'Temperature',
-            'unit' => '°C',
->>>>>>> b51a384a905271dbb232aef23e0745e8c7f7f16e
         ]);
 		
 		DB::table('generic_sensors')->insert([

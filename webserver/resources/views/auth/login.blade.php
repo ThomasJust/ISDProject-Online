@@ -2,7 +2,6 @@
 
 <form method="POST" action="/auth/login">
     {!! csrf_field() !!}
-
     <div>
         Email
         <input type="email" name="email" value="{{ old('email') }}">
@@ -18,6 +17,6 @@
     </div>
 
     <div>
-        <button type="submit">Login</button>
+        <button class="btn" type="submit">Login</button>
     </div>
 </form>

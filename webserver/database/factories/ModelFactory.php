@@ -34,7 +34,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-<<<<<<< HEAD
 
 
 //Samplings->Sensor->products
@@ -52,7 +51,7 @@ $factory->define(App\Sampling::class, function (Faker\Generator $faker) use ($fa
 $factory->define(App\Sensor::class, function (Faker\Generator $faker) use ($factory){
     return [
        'generic_sensor_id' => $faker->numberBetween($min = 1, $max = 9), //one of the 10 sensors
-	   'product_id' =>$factory->create(App\Product::class)->id, 
+	   'product_id' => $factory->create(App\Product::class)->id, 
     ];
 });
 
@@ -73,11 +72,3 @@ $factory->defineAS(App\Sampling::class, 'onlySamplings', function (Faker\Generat
 
 
 
-=======
-$factory->define(App\Product::class, function (Faker\Generator $faker) {
-    return [
-        "id" => str_replace(":", "", $faker->macAddress),
-        "version" => "0.1"
-    ];
-});
->>>>>>> b51a384a905271dbb232aef23e0745e8c7f7f16e

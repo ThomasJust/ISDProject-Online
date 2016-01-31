@@ -12,8 +12,4 @@
 		<link rel="shortcut icon" href="favicon.ico">
 
 		<!-- Override CSS file - add your own CSS rules -->
-		<link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css') }}">
-
-		<!-- load bootstrap from a cdn -->
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/css/bootstrap-combined.min.css">
+		<link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
