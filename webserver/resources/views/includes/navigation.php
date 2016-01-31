@@ -5,7 +5,7 @@
 					<a href="/profile">Profile</a>
 					<a href="/measurements">Measurements</a>
 					<a href="/products">Products</a>
-					<i><a href="{{ url('/auth/logout') }}">LOGOUT</a></i>
+					<i><a href="/auth/logout">LOGOUT</a></i>
 		</ul>
 
 	
