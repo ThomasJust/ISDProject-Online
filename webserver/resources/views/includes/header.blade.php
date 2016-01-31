@@ -1,1 +1,3 @@
-<p> Header content </p>
+
+	<h1 class="header-heading">Sitename</h1>
+

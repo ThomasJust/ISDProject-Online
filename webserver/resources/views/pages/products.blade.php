@@ -2,11 +2,10 @@
 
 @extends('layouts.default')
 
-@section('title', 'Page Title bla')
+@section('title', '')
 
 @section('content')
 
-    <p>Hi, This is my body content.</p>
-	
-	
+<h2> This site is to let the user add/delete a product and view all his products</h2>
+
 @endsection

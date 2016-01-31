@@ -2,11 +2,10 @@
 
 @extends('layouts.default')
 
-@section('title', 'Page Title bla')
+@section('title', '')
 
 @section('content')
 
-    <p>Hi, This is my body content.</p>
-	
-	
+<h2> Some Information about basic webapp stuff and group /project</h2>
+
 @endsection

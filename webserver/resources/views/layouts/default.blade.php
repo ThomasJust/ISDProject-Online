@@ -6,19 +6,26 @@
 <body>
 <div class="container">
 
-    <header class="row">
-        @include('includes.header')
-    </header>
+	<div class="header">
+		@include('includes.header')
+	</div>
+			
+	<div class="nav-bar">
+		@include('includes.navigation')
+	</div>
 
-    <div id="main" class="row">
-            @yield('content')
+    <div class="content">
+		<div class="main">
+            @yield('content')			
+		</div>
     </div>
 
-    <footer class="row">
-        @include('includes.footer')
-    </footer>
-
+	<div class="footer">
+		@include('includes.footer')
+	</div>
+	
 </div>
 </body>
 </html>
 
+	

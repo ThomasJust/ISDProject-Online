@@ -1,1 +1,1 @@
-<p> Here is the footer</p>
+&copy; Copyright 2015

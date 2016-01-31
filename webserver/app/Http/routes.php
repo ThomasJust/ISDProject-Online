@@ -39,8 +39,24 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::group(['middleware' => 'auth'], function () {
     
 	// home startsite
-	Route::get('/home', function(){
+		Route::get('/home', function(){
 	return View::make('pages.home');
+	});
+	
+		Route::get('/about', function(){
+	return View::make('pages.about');
+	});
+	
+		Route::get('/profile', function(){
+	return View::make('pages.profile');
+	});
+	
+		Route::get('/measurements', function(){
+	return View::make('pages.measurements');
+	});
+	
+		Route::get('/products', function(){
+	return View::make('pages.products');
 	});
 
         
