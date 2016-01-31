@@ -179,7 +179,7 @@ Single styles
 .btn:hover
 {
 	color: #fff !important;
-	background-color: green;
+	background-color: orange;
 }
 
 .btn:focus

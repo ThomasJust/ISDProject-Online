@@ -24,6 +24,10 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('pages.register');
 });
+// Reset Password with email link
+Route::get('/reset', function () {
+    return view('pages.resetpassword');
+});
 
 
 // Authentication routes...
@@ -34,6 +38,14 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+
+//Not sure what the difference between this and the lower one is
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
 
 // All Routes with Auth Middleware
 Route::group(['middleware' => 'auth'], function () {
@@ -61,4 +73,6 @@ Route::group(['middleware' => 'auth'], function () {
 
         
 });
+
+
 

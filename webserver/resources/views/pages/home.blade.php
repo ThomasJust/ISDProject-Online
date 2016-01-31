@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <p>Hi, This is my body content.</p>
+    <p>Hi {{ Auth::user()->first_name }} , This is my body content.</p>
 	
 	
 @endsection
