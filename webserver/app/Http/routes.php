@@ -25,3 +25,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 });
+
+Route::get('test', function () {
+    Auth::logout();
+    return Auth::guard()->guest() ? 'guest' : 'not';
+});
