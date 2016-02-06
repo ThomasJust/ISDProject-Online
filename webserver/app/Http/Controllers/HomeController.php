@@ -16,14 +16,39 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return Response
-     */
-    public function index()
+	
+	public function CheckAuth()
+	{
+		return Auth::check();
+	}
+	
+    public function home()
     {
-        return view('pages.home');
+		$name ='alf';
+        return view('pages.home')->with('name');
+	}
+	
+	public function profile()
+    {
+        $name ='alf';
+        return view('pages.profile')->with([
+		'first_name' => 'Marc',
+		'last_name' => 'Bolder'
+		]);
     }
+	
+	public function measurements()
+    {
+        return view('pages.measurements');
+    }
+	
+	public function products()
+    {
+		$products =[
+			'341234','1234513','634234'
+		];
+        return view('pages.products', compact('products'));
+    }
+	
+	
 }

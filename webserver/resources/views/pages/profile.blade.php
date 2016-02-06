@@ -7,5 +7,5 @@
 @section('content')
 
 <h2> User profile, maybe changing some informations and Account deletion</h2>
-
+{{$first_name}} {{$last_name}}
 @endsection

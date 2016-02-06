@@ -1,6 +1,4 @@
-<!-- Stored in resources/views/child.blade.php -->
-
-@extends('layouts.welcome')
+@extends('layouts.default')
 
 @section('title', 'Page Title bla')
 

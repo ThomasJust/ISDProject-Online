@@ -1,4 +1,4 @@
-@extends('layouts.welcome')
+@extends('layouts.default')
 
 <!-- Main Content -->
 @section('content')

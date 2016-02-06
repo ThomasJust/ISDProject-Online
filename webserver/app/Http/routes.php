@@ -15,64 +15,25 @@ Route::post('/products/create', 'ProductsController@store');
 Route::post('/samplings/create', 'SamplingsController@store');
 Route::get('/samplings/show/{productId}', 'SamplingsController@show');
 
+//Webpages
+Route::get('/', 'WelcomeController@index');
+Route::get('/register', 'WelcomeController@register');
+Route::get('/reset', 'WelcomeController@resetpassword');
+Route::get('/UserAuth', 'WelcomeController@UserAuth');
+Route::get('/about', 'WelcomeController@about');
 
-// Welcomepage before and for login /register
-Route::get('/', function () {
-    return view('pages.welcome');
-});
-// Page for registration
-Route::get('/register', function () {
-    return view('pages.register');
-});
-// Reset Password with email link
-Route::get('/reset', function () {
-    return view('pages.resetpassword');
-});
-
-
-// Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
-
-// Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::auth();
+Route::get('/home', 'HomeController@home');	
+Route::get('/profile', 'HomeController@profile');
+Route::get('/products', 'HomeController@products');
+Route::get('/measurements', 'HomeController@measurements');	
+Route::get('auth/logout', 'Auth\AuthController@getLogout');	
 
 
-//Not sure what the difference between this and the lower one is
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
 
-    Route::get('/home', 'HomeController@index');
-});
 
-// All Routes with Auth Middleware
-Route::group(['middleware' => 'auth'], function () {
-    
-	// home startsite
-	Route::get('/home', function(){
-		return View::make('pages.home');
-	});
-	
-	Route::get('/about', function(){
-		return View::make('pages.about');
-	});
-	
-	Route::get('/profile', function(){
-		return View::make('pages.profile');
-	});
-	
-	Route::get('/measurements', function(){
-		return View::make('pages.measurements');
-	});
-	
-	Route::get('/products', function(){
-		return View::make('pages.products');
-	});
 
-        
-});
+
 
 
 

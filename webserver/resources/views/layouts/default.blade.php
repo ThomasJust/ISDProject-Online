@@ -10,8 +10,22 @@
 		@include('includes.header')
 	</div>
 			
-	<div class="nav-bar">
-		@include('includes.navigation')
+	<div class="nav-bar">	
+		@if (Auth::user())
+		<ul class="nav">
+					<a href="/home">Home</a>
+					<a href="/about">About</a>	
+					<a href="/profile">Profile</a>
+					<a href="/measurements">Measurements</a>
+					<a href="/products">Products</a>
+					<a href="/auth/logout">LOGOUT</a>
+		</ul>		
+	@else
+		<ul class="nav">
+					<a href="/">Home</a>
+					<a href="/about">About</a>					
+		</ul>
+	@endif
 	</div>
 
     <div class="content">
